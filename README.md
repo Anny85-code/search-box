@@ -1,24 +1,53 @@
-# README
+# Search Box
+## Description
+This project is part of a test for helpjuice. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+==== Requirements
+* Ruby 3.1.2
+* Rails 7.0.4
+* postgres 9.4+
 
-Things you may want to cover:
+==== Installation
 
-* Ruby version
+    git clone git@github.com:marcoT89/search-box.git
+    cd search-box
+    bundle install
 
-* System dependencies
+Configure the database connections in `config/database.yml`. Than setup the database with:
 
-* Configuration
+    rake db:setup
 
-* Database creation
+Than starts the rails server:
 
-* Database initialization
+    rails s
 
-* How to run the test suite
+See `localhost:3000` to see the app running.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+==== Documentation
+See [Docs](doc/app/index.html) for more details on classes of the project.
 
-* ...
+## Author
+
+👤 **Aniekan udo**
+
+- GitHub: [@Anny85-code](https://github.com/Anny85-code)
+- Twitter: [@Annyudo8](https://twitter.com/Anny_udo8)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/aniekan-udo-665b65213/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+- Tech community
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.

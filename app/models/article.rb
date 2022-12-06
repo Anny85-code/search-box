@@ -1,6 +1,4 @@
 class Article < ApplicationRecord
-  # include PgSearch
-# pg_search_scope :search_by_full_name, against: [:title, :description]
 
   def self.search(search)
     if search
