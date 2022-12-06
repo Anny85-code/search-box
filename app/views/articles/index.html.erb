@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Articles</h1>
+
+<%= form_tag articles_path, method: :get do |f| %>
+  <%= text_field_tag "search", nil, placeholder: "Search..." %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<div class="bg-gray-100 p-8 col-span-5" >
+<%# <%= render partial: "articles/article" %> 
+</div> 
+
+<div id="articles">
+  <% @articles.each do |article| %>
+    <%= render article %>
+    <p>
+      <%= link_to "Show this article", article %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New article", new_article_path %>
