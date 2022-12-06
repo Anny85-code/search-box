@@ -3,16 +3,16 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.search(params[:search])
   end
 
   # GET /articles/1 or /articles/1.json
   def show
   end
   
-  def search
-    @result = Article.where("title LIKE ?", "%" + params[:q] + "%")
-  end
+  # def search
+  #   @result = Article.where("title LIKE?", "%#{params[:search]}%")
+  # end
 
   # GET /articles/new
   def new
