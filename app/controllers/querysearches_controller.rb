@@ -1,18 +1,13 @@
 class QuerysearchController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  # Returns a list of suggestions based on most frequent queries in real time
-  # def suggestions
-  #   @queries = Query.suggest_most_frequent(params[:query].downcase).limit(5)
-  # end
   def index
     @queries = Querysearch.all
   end
 
   
   def show 
-    #  @queries = Query.suggest_most_frequent(params[:query].downcase).limit(5)
-     if Querysearch.update_all(count: 0)
+    if Querysearch.update_all(count: 0)
       broadcast_queries
     end
   end
@@ -33,7 +28,7 @@ class QuerysearchController < ApplicationController
 
   # Resets the count attribute of all queries
   def reset_queries
-    if Query.update_all(count: 0)
+    if Querysearch.update_all(count: 0)
       broadcast_queries
     end
     
@@ -41,6 +36,6 @@ class QuerysearchController < ApplicationController
 
   # Broadcasts most frequent queries through websocket
   def broadcast_queries
-    WebsocketRails[:query].trigger 'all_searches', Query.all.most_frequent
+    WebsocketRails[:query].trigger 'all_searches', Querysearch.all.most_frequent
   end
 end

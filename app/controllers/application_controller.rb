@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
 
 def increment_counter(search)
       result = false
-      puts "Nuri and Udo debugging"
       puts Querysearch.count
       Querysearch.all.each do |query|
         
