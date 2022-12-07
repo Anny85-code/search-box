@@ -9,7 +9,7 @@ This project is part of a test for helpjuice.
 
 ==== Installation
 
-    git clone git@github.com:marcoT89/search-box.git
+    git clone github.Anny85-code/search-box
     cd search-box
     bundle install
 
