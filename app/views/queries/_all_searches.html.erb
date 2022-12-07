@@ -1,20 +1,13 @@
 
-<% @queries.each do |query| %>
+<% queries.each do |query| %>
   <p class="p-2">
     <strong>keyword:</strong>
-    <%= query.keyword %>
+    <%= query.keywords %>
   </p>
 
   <p class="p-2">
     <strong>count:</strong>
     <%= query.count %>
   </p>
-
-  <%# <p class="p-2"> %>
-    <%# <strong>All queries:</strong> %>
-    <%# <%= article.author %> 
-  <%# </p>  %>
-
 <% end %>
-
 

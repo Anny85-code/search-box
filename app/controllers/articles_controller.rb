@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
     @articles = Article.search(params[:search])
+    increment_counter(params[:search])
+    @queries = Querysearch.where(keywords: params[:search].downcase)
   end
 
   # GET /articles/1 or /articles/1.json
@@ -46,6 +48,7 @@ class ArticlesController < ApplicationController
       end
     end
   end
+  
 
   # DELETE /articles/1 or /articles/1.json
   def destroy
@@ -67,5 +70,7 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :description, :author)
     end
+
+    
 end
 
