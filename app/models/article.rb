@@ -6,5 +6,6 @@ class Article < ApplicationRecord
     else
       all
     end
+    
   end
 end

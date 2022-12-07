@@ -1,14 +1,25 @@
-class QueryController < ApplicationController
+class QuerysearchController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   # Returns a list of suggestions based on most frequent queries in real time
-  def suggestions
-    @queries = Query.suggest_most_frequent(params[:query].downcase).limit(5)
+  # def suggestions
+  #   @queries = Query.suggest_most_frequent(params[:query].downcase).limit(5)
+  # end
+  def index
+    @queries = Querysearch.all
+  end
+
+  
+  def show 
+    #  @queries = Query.suggest_most_frequent(params[:query].downcase).limit(5)
+     if Querysearch.update_all(count: 0)
+      broadcast_queries
+    end
   end
 
   # Save a search query incrementing the counter if exists
   def search
-    @query = Query.where(text: params[:query].downcase).first_or_initialize
+    @query = Querysearch.where(text: params[:querysearch].downcase).first_or_initialize
     if query.save
       broadcast_queries
       return @query

@@ -1,13 +1,12 @@
-
-<% queries.each do |query| %>
+<% @queries.each do |query| %>
   <p class="p-2">
     <strong>keyword:</strong>
-    <%= query.keywords %>
+    <%= query.keyword %>
   </p>
 
   <p class="p-2">
     <strong>count:</strong>
     <%= query.count %>
   </p>
-<% end %>
 
+<% end %>

@@ -1,0 +1,2 @@
+class Querysearch < ApplicationRecord
+end
