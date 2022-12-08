@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
 
 def increment_counter(search)
       result = false
-      puts Querysearch.count
       Querysearch.all.each do |query|
         
         if query.keywords.include?(search.downcase)
@@ -17,6 +16,10 @@ def increment_counter(search)
         if result == false
           Querysearch.create(keywords: search.downcase, count: 1)
         end
-    end
+      end
   
+
+    def most_frequent_item_count
+      Querysearch.maximum(:keywords)
+    end
 end

@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
     @articles = Article.search(params[:search])
     increment_counter(params[:search])
     @queries = Querysearch.where(keywords: params[:search].downcase)
+    @highest_count = most_frequent_item_count
   end
 
   # GET /articles/1 or /articles/1.json

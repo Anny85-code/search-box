@@ -23,7 +23,7 @@ class QuerysearchController < ApplicationController
 
   # Returns all queries order by most frequent
   def all_searches
-    @queries = Query.all.most_frequent
+    @queries = Querysearch.all.most_frequent
   end
 
   # Resets the count attribute of all queries
