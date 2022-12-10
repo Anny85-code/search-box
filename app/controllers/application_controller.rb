@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
 def increment_counter(search)
   if search != nil
-result = false
+    result = false
       Querysearch.all.each do |query|
         if query.keywords.include?(search.downcase)
           temp = query.count + 1
