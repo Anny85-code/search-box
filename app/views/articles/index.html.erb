@@ -12,15 +12,12 @@
   </div>
 <% end %>
 
-<div class="bg-gray-100 p-8 col-span-5" >
-<div class="d-flex justify-content-between p-3">
-    <p>
-      <%= render "queries/all_searches", queries: @queries %> 
-    </p>
-    <p>
-     <strong>Trending:</strong>
-    <%= @highest_count %>
-    </p>
+<div class=" bg-gray-100 p-8 col-span-5" >
+    <div class="d-flex justify-content-around p-2 ">
+      <p>
+        <%= render "queries/all_searches", queries: @queries %> 
+      </p>
+      
     </div>
 </div> 
 
