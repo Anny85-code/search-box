@@ -5,7 +5,12 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.search(params[:search])
     increment_counter(params[:search])
-    @queries = Querysearch.where(keywords: params[:search].downcase)
+    if params[:search] != nil
+      @queries = Querysearch.where(keywords: params[:search].downcase)
+    else
+      @queries = []
+    end
+    @highest_count = most_frequent_item_count
   end
 
   # GET /articles/1 or /articles/1.json

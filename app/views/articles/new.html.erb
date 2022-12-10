@@ -1,9 +1,9 @@
-<h1>New article</h1>
-
-<%= render "form", article: @article %>
-
+<h1 class="p-3">New article</h1>
+<div class="input-group">
+<%= render "form",  article: @article %>
+</div>
 <br>
 
-<div>
+<div class="p-3">
   <%= link_to "Back to articles", articles_path %>
 </div>

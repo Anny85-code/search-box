@@ -13,17 +13,17 @@ class QuerysearchController < ApplicationController
   end
 
   # Save a search query incrementing the counter if exists
-  def search
-    @query = Querysearch.where(text: params[:querysearch].downcase).first_or_initialize
-    if query.save
-      broadcast_queries
-      return @query
-    end
-  end
+  # def search
+  #   @query = Querysearch.where(text: params[:querysearch].downcase).first_or_initialize
+  #   if query.save
+  #     broadcast_queries
+  #     return @query
+  #   end
+  # end
 
   # Returns all queries order by most frequent
   def all_searches
-    @queries = Query.all.most_frequent
+    @queries = Querysearch.all.most_frequent
   end
 
   # Resets the count attribute of all queries
